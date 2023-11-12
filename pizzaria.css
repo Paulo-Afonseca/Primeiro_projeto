@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    /* padding é a margem interna do elemento, entre a borda e o conteúdo
+        um valor só coloca um padding em todos os lados internos do elemento.
+        dois valores siginifica que o primeiro é para os lados de cima e embaixo, 
+        e o segundo valor significa os lados da esquerda e direita
+
+        Tres valores => primeiro é o lado de cima, o segundo são os lados direito e esquerdo 
+        e o terceiro é embaixo
+
+        Quatro valores, eles seguem no sentido horario => topo, direita, embaixo, esquerda 
+    */
+    margin: 0;
+
+    /* mesma coisa para margin, mas ela é o espaçamento externo */
+    box-sizing: border-box;
+
+    /* Peço para ele considerar o tamanho da caixa a partir da borda e não a partir do conteúdo,
+    para que ele esmague o conteudo dentro do elemento caso o padding seja grande */
+}
+
+body {
+    background-color: rgb(132, 97, 161);
+    /* background-image: url('https://img.freepik.com/fotos-premium/fatia-de-deliciosa-pizza-com-ingredientes-no-plano-de-fundo-texturizado-de-madeira_23-2147926094.jpg');
+       background-repeat: no-repeat;  Para não repetir a imagem de fundo 
+       background-size: cover;  Para que a imagem cubra todo o elemento */ 
+}
+
+header {
+    background-color: rgb(219, 184, 235);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 2px;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header span {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+header img {
+    width: 50px;
+}
+
+#nav_principal {
+    list-style: none;
+    display: flex;
+}
+
+#nav_principal a {
+    color: black;
+    text-decoration: none; /* none some com decoração de texto da tag a */
+    font-size: 35px;
+    padding-inline: 30px; /* margem interna na esquerda e na direita */
+    position: relative;
+}
+
+#nav_principal a::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    transition: 0.4s;
+}
+
+#nav_principal a:hover::after {
+    width: 100%;
+}
+
+#nav_principal li:not(:first-of-type) {
+    border-left: 1px solid black; /* na ordem: largura, estilo e cor da borda */
+}
+
+main h1{
+    text-align: center;
+    font-size: 60px;
+    margin-block: 50px;
+}
+
+#home {
+    display: flex;
+    justify-content: center;
+    gap: 30px
+}
+
+.card {
+    width: 300px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    height: 4px;
+    background-color: darkgreen;
+    width: 0;
+    position: absolute;
+    bottom: 10px;
+    transition: 0.4s;
+    align-self: flex-start;
+}
+
+.card:hover a {
+    display: block;
+}
+
+.card:hover::before {
+    width: 90%;
+}
+
+.card img {
+    width: 200px;
+}
+
+.card span {
+    font-size: 20px;
+    color: rgb(57, 57, 57);
+    border-top: 2px dashed gray;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.card a {
+    text-decoration: none;
+    background: linear-gradient(180deg, rgb(0, 176, 0), rgb(0, 142, 0)) ;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 5px;
+    border: 1px solid darkgreen;
+    text-transform: uppercase;
+    position: absolute;
+    top: 25%;
+    display: none;
+}
+
+
+table, th, td {
+    text-align: center;
+    margin-block: 50px;
+    border: 1px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    background-color: rgb(219, 184, 235);
+    padding: 5px
+}
+
+caption {
+    color: rgb(255, 255, 255);
+}
+
+table img {
+    width: 150px;
+    height: 100px;
+}
